@@ -3,7 +3,7 @@
 
 
 def canUnlockAll(boxes):
-    ''' Can unlock ? '''
+    ''' unlock  '''
     if type(boxes) != list or len(boxes) == 0:
         return False
     else:
