@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''line by line'''
+'''line by line and computes metrics'''
 import sys
 
 
@@ -28,10 +28,8 @@ try:
             for k in sorted(status_codes):
                 if status_codes[k] != 0:
                     print('{}: {}'.format(k, status_codes[k]))
-
 except KeyboardInterrupt:
     pass
-
 print('File size: {}'.format(f_size))
 for k in sorted(status_codes):
     if status_codes[k] != 0:
