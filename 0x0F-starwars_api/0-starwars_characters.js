@@ -6,18 +6,19 @@ const options = {
 
 };
 let dada;
-request(options, function (err, res, body) {
+request(options, async (err, res, body) => {
   const json = JSON.parse(body);
   dada = json.characters;
   if (err) {
     throw (err);
   }
-
-  for ( i in dada) {
+  for (const i in dada) {
+    await sleep(50);
     const options = {
       url: dada[i]
     };
-    request(options, function (err, res, body) {
+
+    request(options, (err, res, body) => {
       const da = JSON.parse(body);
       console.log(da.name);
       if (err) {
@@ -26,3 +27,8 @@ request(options, function (err, res, body) {
     });
   }
 });
+function sleep (ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
