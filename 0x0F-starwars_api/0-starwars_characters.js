@@ -13,7 +13,7 @@ request(options, async (err, res, body) => {
     throw (err);
   }
   for (const i in dada) {
-    await sleep(110);
+    await sleep(300);
     const options = {
       url: dada[i]
     };
