@@ -2,7 +2,13 @@
 def rain(walls):
     """calculate how much water will be
     retained after rain
+    Args:
+        walls
+    Retruns:
+        Integer
+        Or 0.
     """
+
     if len(walls) == 0:
         return 0
 
