@@ -13,7 +13,7 @@ request(options, function (err, res, body) {
     throw (err);
   }
 
-  for (let i = 0; i < dada.length; i++) {
+  for ( i in dada) {
     const options = {
       url: dada[i]
     };
