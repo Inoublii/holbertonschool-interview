@@ -9,8 +9,8 @@ def rotate_2d_matrix(matrix):
     for i in range(x):
         sub = []
         for q in range(x):
-            sub.append(matrix[i][x])
+            sub.append(matrix[i][q])
         lists.append(sub)
     for i in range(x):
         for q in range(x):
-            matrix[i][q] = sub[x - i - 1][q]
+            matrix[i][q] = lists[x - q - 1][i]
