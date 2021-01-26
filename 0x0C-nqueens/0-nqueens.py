@@ -4,13 +4,14 @@
 import sys
 
 
-def valid(Board, a, i):
-    """ checks if we can insert queen at i in Board
-    """
-    for x in range(a):
-        if (Board[x] == i or
-                Board[x] + a - x == i or
-                Board[x] + x - a == i):
+def valid(chess, x, a):
+    """ Validating That The Queen Placement is Correct """
+    for i in range(x):
+        if(chess[i] == a):
+            return False
+        if(chess[i] + x - i == a):
+            return False
+        if(chess[i] + i - x == a):
             return False
     return True
 
