@@ -24,7 +24,7 @@ avl_t *init_new_node(avl_t *parent, int *arr, size_t idx)
 }
 
 /**
- *rec_avl_tree - Builds an AVL tree from an array
+ *avl_tree - Builds an AVL tree from an array
  *@parent: new node pointer
  *@arr: ptr to the first element
  *@beg: start index
