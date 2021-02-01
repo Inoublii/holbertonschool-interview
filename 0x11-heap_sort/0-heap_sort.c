@@ -2,49 +2,44 @@
 #include <stdlib.h>
 #include "sort.h"
 
-
 /**
- * swap - swaps two elements
- * @a: pointer to first element
- * @b: pointer to second element
- */
-void swap(int *a, int *b)
+ * sift_ - Repair the heap whose root element is at index start.
+ *
+ * @array: the array of the elements.
+ * @size: the size of the array.
+ * @start: the first index of the heap.
+ * @end: the last index of the heap.
+*/
+void sift_(int *array, int size, int start, int end)
 {
-*a = *a * *b;
-*b = *a / *b;
-*a = *a / *b;
-}
+	int change, child, root, left, right;
 
-/**
- * sift_ - puts heap in max-heap order
- * @array: the array
- * @start: where to start from
- * @end: where to end
- * @size: size of array
- */
-void sift_(int *array, int start, int end, int size)
-{
-int root = start;
-int child;
+	root = start;
 
-while (root * 2 + 1 <= end)
-{
-child = root * 2 + 1;
-if (child + 1 <= end && (array[child] < array[child + 1]))
-{
-child += 1;
-}
-if (array[root] < array[child])
-{
-swap(&array[root], &array[child]);
-print_array(array, size);
-root = child;
-}
-else
-{
-return;
-}
-}
+	while (((2 * root) + 1) <= end)
+	{
+		left = 2 * root + 1;
+		child = left;
+		change = root;
+
+		if (array[change] < array[child])
+			change = child;
+		right = 2 * root + 2;
+		if (right <= end && array[change] < array[right])
+			change = right;
+		if (change != root)
+		{
+		int tmp;
+
+		tmp = array[root];
+		array[root] = array[change];
+		array[change] = tmp;
+		print_array(array, size);
+		root = change;
+		}
+		else
+			return;
+	}
 }
 /**
 *	heap_sort - heap sort in ascending order
