@@ -16,7 +16,7 @@ void swap(int *a, int *b)
 }
 
 /**
- * siftDown - puts heap in max-heap order
+ * sift_ - puts heap in max-heap order
  * @array: the array
  * @start: where to start from
  * @end: where to end
