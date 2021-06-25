@@ -2,6 +2,7 @@
 
 """makeChange function."""
 
+
 def makeChange(coins, total):
     """Returns the fewest number of coins needed to meet a given total"""
     if total <= 0:
@@ -13,4 +14,3 @@ def makeChange(coins, total):
             if coins[b] <= a:
                 res[a] = min(res[a], res[a - coins[b]] + 1)
     return -1 if res[total] > total else res[total]
-
